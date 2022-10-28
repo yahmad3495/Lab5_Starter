@@ -18,4 +18,21 @@ function init() {
       image.src = "assets/images/party-horn.svg";
     }
   });
+  let vol = document.querySelector('#volume-controls input');
+  let volImg = document.querySelector('#volume-controls img');
+  vol.addEventListener('input', function () {
+    let volValue = vol.value;
+    if (volValue == 0) {
+      volImg.src = "assets/icons/volume-level-0.svg";
+    }
+    else if (volValue > 0 && volValue <= 33) {
+      volImg.src = "assets/icons/volume-level-1.svg";
+    }
+    else if (volValue > 33 && volValue <= 67) {
+      volImg.src = "assets/icons/volume-level-2.svg";
+    }
+    else {
+      volImg.src = "assets/icons/volume-level-3.svg";
+    }
+  })
 }
